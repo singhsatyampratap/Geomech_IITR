@@ -58,4 +58,16 @@ plot(log.Sv,-log.Depth)
 plot(log.Shmin,-log.Depth)
 plot(log.PP,-log.Depth)
 legend 'Overburden' 'Minimum Horizontal' 'Pore Pressure' 
+%%
+%bore hole shape
+close all
+borehole_shape(1.5,log.Depth,0.05)
 
+%%
+%synthetic Density data using gardener equation
+log.sy_den=synthetic_Density(log.VP,310,0.25);
+plot(log.sy_den,-log.Depth)
+%%
+%synthetic Pwave data using inverse gardener equation
+log.sy_VP=synthetic_VP(log.VP,108,4);
+plot(log.sy_VP,-log.Depth)
