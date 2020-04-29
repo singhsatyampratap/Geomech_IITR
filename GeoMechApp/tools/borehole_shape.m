@@ -12,12 +12,11 @@ function borehole_shape(Radius_log,Depth_log,per_noise)
     end
     
     [X,Y,Z]=cylinder(Radius_log);
-    Z=Z*l+Depth_log(l);
+    Z=Z*(-l*(Depth_log(2)-Depth_log(1)))-Depth_log(1);
     C=X.^2+Y.^2;
-    xlim([-10,10])
-    ylim([-10,10])
+  
     surf(X,Y,Z,C,'EdgeColor',"none")
-    set(gcf,'Position',[10 10 500 1500])
+    
     view(90,4)
     
 end
