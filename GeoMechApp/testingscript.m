@@ -71,3 +71,15 @@ plot(log.sy_den,-log.Depth)
 %synthetic Pwave data using inverse gardener equation
 log.sy_VP=synthetic_VP(log.VP,108,4);
 plot(log.sy_VP,-log.Depth)
+
+
+%%
+%reading a las file and using it in code
+l=read_las_file('/MATLAB Drive/GeoMechSAT/B-12-13_l.las');
+[Data,unit]=las_to_sat(l);
+%%
+%testing data_loader1.m
+[log,orlog]=data_loader1('/MATLAB Drive/GeoMechSAT/GeoMech/B-12-13_data.xlsx','/MATLAB Drive/GeoMechSAT/GeoMech/B-12-13_name_unit.txt')
+%%
+%testing log plotting tools
+logplot(log,["Density","GR","VP","borehole shape"])
