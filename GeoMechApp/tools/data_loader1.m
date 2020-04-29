@@ -68,6 +68,15 @@ function [log,original_log]=data_loader1(file_loc_data,file_loc_unit)
             log.VP=1./log.dtco
             log.VS=1./log.dtsm
             
+            
+            log.unit(8,1)={"VP"}
+            log.unit(8,2)={"m/s"}
+            log.unit(9,1)={"VS"}
+            log.unit(9,1)={"m/s"}
+            log.unit(10,1)={"Sv"}
+            log.unit(10,1)={"Pa"}
+            
+            
 
              
 end
